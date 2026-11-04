@@ -1,0 +1,954 @@
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Muhammad Dimas Alvin Pratama</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <style>
+
+    :root{
+        --primary:#3b82f6;
+        --dark:#0f172a;
+        --card:#1e293b;
+        --text:#f8fafc;
+        --secondary:#94a3b8;
+    }
+
+    *{
+        font-family:'Poppins',sans-serif;
+        scroll-behavior:smooth;
+    }
+
+    body{
+        background:var(--dark);
+        color:var(--text);
+    }
+
+    .navbar{
+        background:rgba(15,23,42,.95) !important;
+        backdrop-filter:blur(10px);
+    }
+
+    .hero{
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+    }
+
+    .profile-img{
+        width:350px;
+        height:350px;
+        object-fit:cover;
+        border-radius:50%;
+        border:5px solid var(--primary);
+        box-shadow:0 0 40px rgba(59,130,246,.5);
+    }
+
+    .section-title{
+        font-weight:700;
+        margin-bottom:60px;
+        position:relative;
+        text-align:center;
+    }
+
+    .section-title::after{
+        content:"";
+        width:80px;
+        height:4px;
+        background:var(--primary);
+        position:absolute;
+        bottom:-15px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    .glass-card{
+        background:var(--card);
+        border:1px solid rgba(255,255,255,.1);
+        border-radius:20px;
+        transition:.3s;
+    }
+
+    .glass-card:hover{
+        transform:translateY(-10px);
+    }
+
+    .project-card{
+        background:var(--card);
+        border:none;
+        border-radius:20px;
+        overflow:hidden;
+        transition:.3s;
+    }
+
+    .project-card:hover{
+        transform:translateY(-10px);
+    }
+
+    .project-card img{
+        height:220px;
+        object-fit:cover;
+    }
+
+    .progress{
+        height:12px;
+        border-radius:15px;
+    }
+
+    .skill-box{
+        margin-bottom:25px;
+    }
+
+    .stats{
+        padding:50px 0;
+    }
+
+    .stats h2{
+        font-size:3rem;
+        font-weight:700;
+    }
+
+    .contact-card{
+        background:var(--card);
+        border-radius:20px;
+    }
+
+    footer{
+        background:#020617;
+    }
+
+    .contact-card{
+        background:#1e293b;
+        border:1px solid rgba(255,255,255,.1);
+        border-radius:20px;
+    }
+
+    .form-control,
+    textarea{
+        background:#334155 !important;
+        border:none;
+        color:white !important;
+    }
+
+    .form-control::placeholder,
+    textarea::placeholder{
+        color:#e2e8f0 !important;
+    }
+    /* ===== MOBILE RESPONSIVE ===== */
+
+    @media (max-width: 768px){
+
+        .hero{
+            text-align:center;
+            padding-top:100px;
+            padding-bottom:50px;
+        }
+
+        .hero h1{
+            font-size:2.5rem;
+        }
+
+        .hero h3{
+            font-size:1.3rem;
+        }
+
+        .hero .btn{
+            width:100%;
+            margin-bottom:10px;
+        }
+
+        .profile-img{
+            width:220px;
+            height:220px;
+            margin-top:30px;
+        }
+
+        .project-card img{
+            height:180px;
+        }
+
+        .contact-card{
+            padding:15px;
+        }
+
+        .stats h2{
+            font-size:2.2rem;
+        }
+
+        footer .fs-3{
+            font-size:1.8rem !important;
+        }
+
+    }
+
+    .navbar-toggler{
+        border:none;
+    }
+
+    .navbar-toggler:focus{
+        box-shadow:none;
+    }
+    .skill-box{
+        margin-bottom:25px;
+    }
+
+    .skill-box label{
+        display:block;
+        margin-bottom:8px;
+        font-weight:500;
+    }
+
+    .progress{
+        height:12px;
+        border-radius:20px;
+        overflow:hidden;
+    }
+    /* ===== PREMIUM ANIMATION ===== */
+
+body{
+background:
+linear-gradient(
+135deg,
+#020617,
+#0f172a,
+#172554
+);
+}
+
+.profile-img{
+    transition:.5s;
+}
+
+.profile-img:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 30px #3b82f6,
+    0 0 60px #3b82f6;
+}
+
+.glass-card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 10px 30px rgba(59,130,246,.2);
+}
+
+.project-card:hover{
+    transform:translateY(-15px);
+
+    box-shadow:
+    0 20px 40px rgba(59,130,246,.3);
+}
+
+.btn-primary{
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(59,130,246,.8);
+}
+
+.section-title::after{
+    animation:lineMove 2s infinite;
+}
+
+@keyframes lineMove{
+
+    0%{
+        width:50px;
+    }
+
+    50%{
+        width:120px;
+    }
+
+    100%{
+        width:50px;
+    }
+
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#60a5fa;
+}
+.contact-card{
+    max-width: 900px;
+    margin: auto;
+    background: var(--card);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.contact-card .form-control{
+    height:55px;
+}
+
+.contact-card textarea{
+    height:180px !important;
+}
+    </style>
+    </head>
+    <body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                Muhammad Dimas Alvin Pratama
+            </a>
+
+            <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Keahlian</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Project</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="badge bg-primary px-3 py-2 mb-3">
+                        MAHASISWA INFORMATIKA
+                    </span>
+
+                    <h1 class="display-2 fw-bold">
+                        Halo, Saya Dimas
+                    </h1>
+
+                    <h3 class="text-primary mb-4">
+                        <span id="typing"></span>
+                    </h3>
+
+                    <p class="lead text-secondary-custom">
+                        Mahasiswa Program Studi Informatika
+                        Politeknik Negeri Batam yang memiliki minat pada
+                        Web Development, Teknologi Informasi,
+                        Administrasi Data, dan Jaringan Komputer.
+                    </p>
+
+                    <div class="mt-4 d-grid gap-2 d-md-block">
+
+                        <a href="CV DIMAS TERBARU.pdf"
+                        class="btn btn-primary btn-lg me-md-3"
+                        download>
+                        <i class="bi bi-download me-2"></i>
+                        Lihat CV
+                        </a>
+
+                        <a href="#contact"
+                        class="btn btn-outline-light btn-lg">
+                        Hubungi Saya
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+                    <img src="foto.jpeg"
+                        alt="Foto Dimas"
+                    class="profile-img img-fluid">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+
+    <section id="about" class="py-5">
+        <div class="container">
+
+            <h2 class="section-title">
+                Tentang Saya
+            </h2>
+
+            <div class="glass-card p-4">
+
+                <p class="text-secondary-custom mb-4">
+                    Saya adalah mahasiswa Program Studi Informatika
+                    Politeknik Negeri Batam yang memiliki minat pada
+                    Web Development, Teknologi Informasi, Administrasi Data,
+                    dan Jaringan Komputer.
+
+                    Saya memiliki pengalaman magang sebagai
+                    Videografer & Social Media serta Accounting &
+                    Supply Chain Admin Intern.
+                </p>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <p><strong>Nama:</strong> Muhammad Dimas Alvin Pratama</p>
+                        <p><strong>Pendidikan:</strong> Mahasiswa Semester 1 Politeknik Negeri Batam</p>
+                        <p><strong>Program Studi:</strong> Informatika</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <p><strong>Email:</strong> muhammad.dimasnew@gmail.com</p>
+                        <p><strong>No HP:</strong> +62 859 2311 2309</p>
+                        <p><strong>Lokasi:</strong> Kampung Tua Sungai Binti Blok B nomor 18, Sungai Binti, Sagulung, Batam, Kepulauan Riau</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="education" class="py-5">
+
+    <div class="container">
+
+    <h2 class="section-title">
+    Pendidikan
+    </h2>
+
+    <div class="row g-4">
+
+    <div class="col-lg-6">
+
+    <div class="glass-card p-4 h-100">
+
+    <h4>Politeknik Negeri Batam</h4>
+
+    <p class="text-primary">
+    Mahasiswa Aktif - Program Studi Informatika
+    </p>
+
+    <p class="text-secondary-custom">
+    Mempelajari pemrograman, pengembangan website,
+    basis data, jaringan komputer dan teknologi informasi.
+    </p>
+
+    </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+    <div class="glass-card p-4 h-100">
+
+    <h4>SMK Negeri 1 Batam</h4>
+
+    <p class="text-primary">
+    Teknik Komputer dan Jaringan (TKJ)
+    </p>
+
+    <p class="text-secondary-custom">
+    Mempelajari dasar jaringan komputer,
+    perangkat keras dan teknologi informasi.
+    </p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills" class="py-5">
+        <div class="container">
+
+            <h2 class="section-title">
+                Technical Skills
+            </h2>
+
+            <div class="row">
+
+                <!-- Kolom Kiri -->
+                <div class="col-lg-6">
+
+                    <div class="skill-box">
+                        <label>Microsoft Office</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width:90%">
+                                90%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-box">
+                        <label>Administrasi Data</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width:85%">
+                                85%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-box">
+                        <label>Jaringan LAN & WiFi</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width:85%">
+                                85%
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Kolom Kanan -->
+                <div class="col-lg-6">
+
+                    <div class="skill-box">
+                        <label>HTML & CSS</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width:85%">
+                                85%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-box">
+                        <label>Bootstrap</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width:90%">
+                                90%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-box">
+                        <label>JavaScript</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-secondary" style="width:75%">
+                                75%
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="experience" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">
+Pengalaman Magang
+</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-6">
+
+<div class="glass-card p-4 h-100">
+
+<h4>M3D Barbershop</h4>
+
+<p class="text-primary">
+Videografer & Social Media
+</p>
+
+<ul>
+<li>Membuat dan mengedit video promosi.</li>
+<li>Mengelola media sosial bisnis.</li>
+<li>Membuat konten digital.</li>
+<li>Membantu branding perusahaan.</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="glass-card p-4 h-100">
+
+<h4>PT Vista Maritim Indonesia</h4>
+
+<p class="text-primary">
+Accounting & Supply Chain Admin Intern
+</p>
+
+<ul>
+<li>Mengelola data Excel.</li>
+<li>Mengarsipkan dokumen perusahaan.</li>
+<li>Mengelola PO, DO, dan Invoice.</li>
+<li>Membantu administrasi operasional.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">
+Sertifikat
+</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-6">
+
+<div class="glass-card p-4">
+
+<h5>Sertifikat Magang M3D Barbershop</h5>
+
+<p class="text-secondary-custom">
+Sep 2024 - Jan 2025
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="glass-card p-4">
+
+<h5>Sertifikat PKL PT Vista Maritim Indonesia</h5>
+
+<p class="text-secondary-custom">
+Jul 2025 - Des 2025
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+<div class="container">
+
+
+
+<div class="row text-center">
+
+
+
+<div class="col-md-4 mb-4">
+    <h2 class="text-primary">2</h2>
+    <p>Pengalaman Magang</p>
+</div>
+
+
+
+<div class="col-md-4 mb-4">
+    <h2 class="text-success">2</h2>
+    <p>Sertifikat Magang</p>
+</div>
+
+
+
+<div class="col-md-4 mb-4">
+    <h2 class="text-warning">Informatika</h2>
+    <p>Program Studi</p>
+</div>
+
+    </section>
+    <!-- Contact -->
+
+<section id="contact" class="py-5">
+
+<div class="container">
+
+    <h2 class="section-title">
+        Hubungi Saya
+    </h2>
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="contact-card p-4">
+
+                <form id="contactForm">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <input type="text"
+                                   name="name"
+                                   class="form-control"
+                                   placeholder="Nama Lengkap"
+                                   required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <input type="email"
+                                   name="email"
+                                   class="form-control"
+                                   placeholder="Email"
+                                   required>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text"
+                               name="subject"
+                               class="form-control"
+                               placeholder="Subjek">
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea name="message"
+                                  rows="6"
+                                  class="form-control"
+                                  placeholder="Tulis pesan Anda..."
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary w-100">
+
+                        <i class="bi bi-send-fill me-2"></i>
+                        Kirim Pesan
+
+                    </button>
+
+                </form>
+
+                <div id="successMessage"
+                     class="alert alert-success mt-3 d-none">
+
+                    ✅ Pesan berhasil dikirim.
+
+                    <a href="https://wa.me/6285923112309"
+                    class="btn btn-success w-100 mt-2"
+                    target="_blank">
+
+                    <i class="bi bi-whatsapp me-2"></i>
+                    Chat WhatsApp
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+    <!-- Footer -->
+
+    <footer class="py-5">
+
+    <div class="container text-center">
+
+    <h3>Dimas</h3>
+
+    <p class="text-secondary">
+    Front-End Developer & UI Designer
+    </p>
+
+    <div class="mt-3">
+
+    <a href="#" class="text-white fs-3 me-3">
+    <i class="bi bi-github"></i>
+    </a>
+
+    <a href="#" class="text-white fs-3 me-3">
+    <i class="bi bi-linkedin"></i>
+    </a>
+
+    <a href="#" class="text-white fs-3">
+    <i class="bi bi-instagram"></i>
+    </a>
+
+    </div>
+
+    <hr>
+
+    <p>
+    © 2026 Dimas Portfolio. All Rights Reserved.
+    </p>
+
+    </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+    AOS.init({
+        duration:1000,
+        once:true
+    });
+
+    const text =
+    "Mahasiswa Informatika";
+
+    let i = 0;
+
+    function typeWriter(){
+
+        if(i < text.length){
+
+            document.getElementById("typing").innerHTML += text.charAt(i);
+
+            i++;
+
+            setTimeout(typeWriter,70);
+        }
+    }
+
+    typeWriter();
+
+    </script>
+    <!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+emailjs.init("4sbxer50_jDp8aGf9");
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const button =
+    this.querySelector("button");
+
+    button.innerHTML =
+    "Mengirim...";
+
+    button.disabled = true;
+
+    emailjs.sendForm(
+        "service_sekkwvh",
+        "template_gy4kkpi",
+        this
+    )
+
+    .then(() => {
+
+        button.innerHTML =
+        "✅ Pesan Terkirim";
+
+        document
+        .getElementById("successMessage")
+        .classList.remove("d-none");
+
+        this.reset();
+
+        setTimeout(() => {
+
+            button.innerHTML =
+            '<i class="bi bi-send-fill me-2"></i>Kirim Pesan';
+
+            button.disabled = false;
+
+            document
+            .getElementById("successMessage")
+            .classList.add("d-none");
+
+        },3000);
+
+    })
+
+    .catch((error) => {
+
+        console.error(error);
+
+        button.innerHTML =
+        "❌ Gagal Mengirim";
+
+        setTimeout(() => {
+
+            button.innerHTML =
+            '<i class="bi bi-send-fill me-2"></i>Kirim Pesan';
+
+            button.disabled = false;
+
+        },3000);
+
+    });
+
+});
+
+</script>
+    </body>
+    </html>
